@@ -1,0 +1,2 @@
+# simpl
+fish-shell theme
