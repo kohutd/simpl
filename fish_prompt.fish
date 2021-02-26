@@ -35,4 +35,5 @@ function fish_prompt
   end
 
   echo -n -s ' › ' $normal
+  echo -en '\e[5 q'
 end
