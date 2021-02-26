@@ -15,7 +15,7 @@ function fish_prompt
   set -l green (set_color -o green)
   set -l normal (set_color normal)
 
-  set -l cwd $ok(basename (prompt_pwd))
+  set -l cwd $ok(prompt_pwd)
 
   if set -q VIRTUAL_ENV
       echo -n -s (set_color -b ok black) '[' (basename "$VIRTUAL_ENV") ']' $normal ' '
@@ -30,6 +30,8 @@ function fish_prompt
       set git_info $green $git_branch
     end
     echo -n -s ' ' $cwd ' · ' $git_info $normal
+  else
+    echo -n -s ' ' $cwd $normal
   end
 
   echo -n -s ' › ' $normal
